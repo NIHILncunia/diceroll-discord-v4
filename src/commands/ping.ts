@@ -1,7 +1,7 @@
 import {
   Client, CommandInteraction, EmbedBuilder, SlashCommandBuilder
 } from 'discord.js';
-import { Command } from '@/types/command';
+import { Command } from '@/types/structuretypes';
 
 const command: Command = {
   data: new SlashCommandBuilder()
@@ -17,7 +17,7 @@ const command: Command = {
         },
       ]);
 
-    interaction.reply({
+    await interaction.reply({
       embeds: [ embed, ],
     });
   },

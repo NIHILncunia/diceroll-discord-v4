@@ -1,5 +1,5 @@
 import { Client } from 'discord.js';
-import { Event } from '@/types/command';
+import { Event } from '@/types/structuretypes';
 
 const event: Event = {
   name: 'ready',

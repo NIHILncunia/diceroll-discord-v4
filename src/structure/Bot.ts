@@ -4,7 +4,7 @@ import {
 import { readdirSync } from 'fs';
 import { join } from 'path';
 import config from '@/config/config.json';
-import { Command, Event } from '@/types/command';
+import { Command, Event } from '@/types/structuretypes';
 
 export default class Bot {
   public commands = new Collection<string, any>();
