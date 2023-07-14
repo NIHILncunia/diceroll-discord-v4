@@ -13,7 +13,8 @@ export default class Bot {
 
   // eslint-disable-next-line no-unused-vars
   constructor(public readonly client: Client) {
-    this.client.login(config.TOKEN);
+    this.client.login(process.env.TOKEN);
+    // this.client.login(config.TOKEN);
 
     this.client.on(Events.Warn, (info) => console.log(info));
     this.client.on(Events.Error, console.error);
@@ -64,10 +65,10 @@ export default class Bot {
 
   private async registerCommands() {
     setTimeout(() => {
-      const rest = new REST({ version: '10', }).setToken(config.TOKEN);
+      const rest = new REST({ version: '10', }).setToken(process.env.TOKEN);
 
       rest.put(
-        Routes.applicationCommands(config.CLIENT_ID),
+        Routes.applicationCommands(process.env.CLIENT_ID),
         { body: this.commandsArray, }
       )
         .then(() => {
